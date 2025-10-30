@@ -194,6 +194,20 @@ body.dark .tagline {
   from { opacity: 0; transform: translate(-50%, 20px); }
   to { opacity: 1; transform: translate(-50%, 0); }
 }
+/* Make LinkedIn links look like normal text but stay clickable */
+.founders a {
+  color: inherit;              /* same color as surrounding text */
+  text-decoration: none;       /* remove underline */
+  font-weight: inherit;        /* same weight as text */
+  cursor: pointer;             /* still clickable */
+  transition: color 0.2s ease;
+}
+
+/* Optional subtle hover effect */
+.founders a:hover {
+  color: #f5f523; /* your theme yellow, or use 'inherit' for no change */
+}
+
 
 /* Typography inside overlay */
 .overlay h2 {
