@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildSoc | Policy + Urban Tech</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/favicon.png">
+
+
+  <!-- Lexend Deca Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet" />
+
+  <meta name="description" content="BuildSoc is a Policy and Urban Tech Studio enabling smarter, data-driven cities through GIS, AI, and evidence-based policy innovation.">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-left">
+      <img src="assets/nav_icon1.svg" alt="Grid Icon" class="nav-icon" />
+      <span class="nav-symbol">+</span>
+      <img src="assets/nav_icon2.svg" alt="Network Icon" class="nav-icon" />
+      <span class="nav-symbol">></span>
+      <img src="assets/nav_icon3.svg" alt="Grid Icon" class="nav-icon" />
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="active">HOME</a></li>
+      <li><a href="#about">ABOUT US</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <div class="toggle-mode-main" id="toggleModemain">☀</div>
+  </nav>
+
+  <div class="toggle-mode" id="toggleMode">☀</div>
+
+  <!-- Map Background -->
+  <div id="map"></div>
+
+  <!-- Home Section -->
+  <section id="home" class="home-viewport">
+    <div class="center-content">
+      <a href="https://app.buildsoc.in" target="_blank" rel="noopener noreferrer">
+        <img src="assets/buildsoc_logo.svg" alt="BuildSoc Logo" class="logo-main" />
+      </a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="overlay hidden">
+    <h2>About Us</h2>
+    <p>
+      <strong>BuildSoc</strong> (Building Smarter Societies) is a <strong>Policy and Urban Tech Studio</strong> that
+      bridges governance, planning, and data. We work at the intersection of <em>urban policy</em>,
+      <em>spatial technology</em>, and <em>digital governance</em> — enabling cities to become smarter,
+      more inclusive, and evidence-driven.
+    </p>
+    <p>
+      Founded by young urban planners and technologists, BuildSoc rethinks how
+      cities are shaped — not just through plans, but through <strong>data, design, and decision systems</strong>.
+    </p>
+
+    <h3>Our Mission</h3>
+    <p>
+      To create <strong>data-driven, technology-enabled urban systems</strong> that make cities more
+      equitable, sustainable, and responsive.
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      To be India’s most forward-thinking <strong>Urban Policy & Technology Think Tank</strong>,
+      transforming research and data into real change for cities and citizens.
+    </p>
+
+    <p class="founders">
+      Founded by <strong><a href="https://www.linkedin.com/in/bharatoraon" target="_blank" rel="noopener noreferrer">
+      Bharat Oraon
+    </a></strong> and <strong> <a href="https://www.linkedin.com/in/manishyalala/" target="_blank" rel="noopener noreferrer"> Manish Yalala </a> </strong> — urban planners driven by innovation,
+      governance, and data.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="overlay hidden">
+    <h2>Flagship Projects</h2>
+    <div class="project-grid">
+      
+      <div class="project-card">
+        <a href="https://app.buildsoc.in/our-product/karur-district-dashboard-app" class="project-card" target="_blank" rel="noopener noreferrer">
+        <img src="assets/karur.jpg" alt="Karur Logistics"> </a>
+        <h3>Karur Logistics Suitability Map</h3>
+        <p>AI-GIS model identifying high-potential logistics hubs and corridors for regional freight efficiency.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/solapur.jpg" alt="Solapur Governance">
+        <h3>Solapur Urban Governance Index</h3>
+        <p>Composite evaluation tool for assessing municipal performance and citizen service quality.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/mvp.jpg" alt="MVP Colony Redevelopment">
+        <h3>MVP Colony Redevelopment Plan</h3>
+        <p>Local Area Plan for inclusive redevelopment with FSI optimization and improved livability.</p>
+      </div>
+      <div class="project-card">
+        <img src="assets/bengaluru.jpg" alt="Bengaluru Property Tax Study">
+        <h3>Bengaluru Property Tax Framework</h3>
+        <p>Policy reform and mapping of property assessments for better fiscal transparency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="overlay hidden">
+    <h2>Let’s Collaborate</h2>
+    <p>Have a project, policy idea, or data challenge? Let’s make it real.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Tell us about your idea..." required></textarea>
+      <button type="submit">Send Message ➜</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

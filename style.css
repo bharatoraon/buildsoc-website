@@ -1,0 +1,472 @@
+/* ========== RESET & BASE ========== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lexend Deca', sans-serif;
+  overflow: hidden;
+  transition: background 0.5s;
+}
+
+/* ========== NAVBAR ========== */
+nav {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  max-width: 1300px;
+  height: 60px;
+  background: #f5f523;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-icon {
+  height: 25px;
+  width: 25px;
+  object-fit: contain;
+}
+
+.nav-symbol {
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+
+/* ===== NAV MENU ===== */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 35px;
+  margin-left: auto;
+  margin-right: 50px;
+  padding: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.nav-menu li a.active,
+.nav-menu li a:hover {
+  background: black;
+  color: #f5f523;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* ====== TOGGLE MODE MAIN (Navbar) ====== */
+.toggle-mode-main {
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+
+.toggle-mode-main:hover {
+  transform: rotate(20deg);
+}
+
+/* ====== DARK MODE NAVBAR ====== */
+body.dark nav {
+  background: #222;
+  color: #f5f523;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.15);
+}
+
+body.dark .nav-menu li a {
+  color: #f5f523;
+}
+
+body.dark .nav-menu li a.active,
+body.dark .nav-menu li a:hover {
+  background: #555;
+  color: #f5f523;
+}
+
+body.dark .nav-symbol {
+  color: #f5f523;
+}
+
+body.dark .nav-icon {
+  filter: brightness(0) invert(1);
+}
+
+body.dark .toggle-mode-main {
+  color: #f5f523;
+}
+
+/* ========== MAP BACKGROUND ========== */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* ---------- HOME ---------- */
+.home-viewport {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.center-content {
+  pointer-events: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-main {
+  width: clamp(300px, 50vw, 750px);
+  height: auto;
+  display: block;
+  animation: fadeIn 1.2s ease;
+}
+
+.tagline {
+  margin-top: 30px;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: #111;
+  letter-spacing: 0.5px;
+  animation: fadeIn 2s ease;
+}
+
+body.dark .tagline {
+  color: #f5f523;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- FUTURISTIC GLASSMORPHIC OVERLAY ---------- */
+.overlay {
+  position: absolute;
+  z-index: 2;
+  top: calc(60px + 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  max-width: 1200px;
+
+  /* Glassmorphic Style */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+
+  padding: 50px 60px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
+  animation: fadeInOverlay 0.5s ease forwards;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Typography inside overlay */
+.overlay h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+  position: relative;
+}
+
+.overlay h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #f5f523;
+  border-radius: 2px;
+}
+
+.overlay h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  color: #333;
+}
+
+.overlay p {
+  line-height: 1.7;
+  color: #111;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  text-align: justify;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+}
+
+/* ---------- DARK MODE GLASS ---------- */
+body.dark .overlay {
+  background: rgba(25, 25, 25, 0.35);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f5f523;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .overlay h2 {
+  color: #f5f523;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+body.dark .overlay h3 {
+  color: #ddd;
+}
+
+body.dark .overlay p {
+  color: #f0f0b0;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* ---------- PROJECT CARDS ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 20px 5px;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.project-card p {
+  margin: 0 20px 20px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+body.dark .project-card {
+  background: rgba(45, 45, 45, 0.6);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .project-card h3 {
+  color: #f5f523;
+}
+
+body.dark .project-card p {
+  color: #ddd;
+}
+
+/* ---------- CONTACT FORM ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1.5px solid #ddd;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #f5f523;
+  box-shadow: 0 0 0 3px rgba(245, 245, 35, 0.3);
+  outline: none;
+}
+
+form button {
+  background: #f5f523;
+  color: black;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background: black;
+  color: #f5f523;
+}
+
+body.dark form input,
+body.dark form textarea {
+  background: #222;
+  color: #f5f523;
+  border: 1.5px solid #555;
+}
+
+body.dark form button:hover {
+  background: #555;
+  color: #f5f523;
+}
+
+/* RESPONSIVE NAVBAR */
+.menu-toggle {
+  display: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 50;
+}
+
+/* FLOATING NIGHT TOGGLE (MOBILE) */
+.toggle-mode {
+  display: none;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  .overlay {
+    width: 80%;
+    padding: 30px;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    color: black;
+  }
+
+  body.dark .menu-toggle {
+    color: #f5f523;
+  }
+
+  .toggle-mode-main {
+    display: none;
+
+  }
+
+  .toggle-mode {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #f5f523;
+    color: black;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 9999 !important;
+  }
+
+  body.dark .toggle-mode {
+    background: #222;
+    color: #f5f523;
+  }
+    /* ---------- NAVBAR SIZE ON SMALL SCREENS ---------- */
+  nav {
+    width: 90%;
+    height: 50px;        /* smaller height */
+    top: 15px;           /* closer to top */
+    padding: 0 20px;     /* less side padding */
+    border-radius: 12px; /* smoother look */
+  }
+
+  .nav-icon {
+    height: 22px;
+    width: 22px;
+  }
+
+  .nav-symbol {
+    font-size: 0.9rem;
+  }
+
+  .nav-menu li a {
+    font-size: 0.9rem;
+  }
+
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    background: #f5f523;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: none;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  body.dark .nav-menu {
+    background: #222;
+  }
+}
+/* ================== FIXED VISIBILITY ISSUE ================== */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+}
