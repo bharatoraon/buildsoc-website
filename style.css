@@ -205,7 +205,7 @@ body.dark .tagline {
 
 /* Optional subtle hover effect */
 .founders a:hover {
-  color: #f5f523; /* your theme yellow, or use 'inherit' for no change */
+  color: orange; /* your theme yellow, or use 'inherit' for no change */
 }
 
 
