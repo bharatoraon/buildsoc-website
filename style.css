@@ -393,8 +393,28 @@ body.dark form button:hover {
 /* MOBILE LAYOUT */
 @media (max-width: 768px) {
   .overlay {
-    width: 80%;
-    padding: 30px;
+    width: 90%;
+    padding: 25px 20px;
+    top: calc(60px + 20px);
+    max-height: calc(100vh - 120px);
+  }
+
+  .overlay h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .overlay p {
+    font-size: 0.95rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .logo-main {
+    width: clamp(200px, 70vw, 400px);
   }
 
   .menu-toggle {
