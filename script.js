@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         // NOTE: Replace the fetch URL with your actual Formspree endpoint ID
-        const response = await fetch("https://formspree.io/f/mqkenaqq", {
+        const response = await fetch("https://formspree.io/f/mojnzwjl", {
           method: "POST",
           body: formData,
           headers: {
