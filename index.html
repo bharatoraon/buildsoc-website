@@ -128,6 +128,9 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="alternate icon" type="image/png" href="assets/favicon.png">
 
+  <!-- EmailJS SDK for Background Form Submission -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Styles & Scripts -->
   <style>
     /* Semantic hidden elements for accessibility */
@@ -264,12 +267,12 @@
     <section id="contact" class="overlay hidden">
       <h2>Let’s Collaborate</h2>
       <p>Have a project, policy idea, or data challenge? Let’s make it real.</p>
-      <form action="https://formspree.io/f/mqkenaqq" method="POST">
+      <form id="contactForm">
         <label for="name" class="visually-hidden">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="text" id="name" name="from_name" placeholder="Your Name" required />
 
         <label for="email" class="visually-hidden">Your Email</label>
-        <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
+        <input type="email" id="email" name="reply_to" placeholder="Your Email" required />
 
         <label for="message" class="visually-hidden">Your Message</label>
         <textarea id="message" name="message" placeholder="Tell us about your idea..." required></textarea>

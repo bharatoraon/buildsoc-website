@@ -1,5 +1,5 @@
 // MAP INIT
-mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhcmF0b3Jhb24iLCJhIjoiY21oY29lZnh1MXc0YTJ2cGN5ZHluZWowMyJ9.qvW4djVZVpIj1YJd3OQW2w';
+mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v11',
@@ -81,4 +81,55 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+// CONTACT FORM - EMAILJS INTEGRATION
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize EmailJS (Note: User needs to insert their public key here)
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init("YOUR_PUBLIC_KEY");
+  }
+
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      // Ensure form IDs match EmailJS template variables
+      emailjs.sendForm('default_service', 'template_buildsoc', this)
+        .then(() => {
+          btn.textContent = 'Message Sent Successfully ✓';
+          btn.style.background = '#4CAF50';
+          btn.style.color = 'white';
+          form.reset();
+
+          // Reset button after 4 seconds
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+          }, 4000);
+        })
+        .catch((err) => {
+          console.error('Email sending failed:', err);
+          btn.textContent = 'Error. Please try again.';
+          btn.style.background = '#e74c3c';
+          btn.style.color = 'white';
+          
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+          }, 3000);
+        });
+    });
+  }
 });
