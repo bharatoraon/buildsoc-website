@@ -1,5 +1,5 @@
 // MAP INIT
-mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhcmF0b3Jhb24iLCJhIjoiY21oY29lZnh1MXc0YTJ2cGN5ZHluZWowMyJ9.qvW4djVZVpIj1YJd3OQW2w';
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v11',
