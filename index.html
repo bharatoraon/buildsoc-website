@@ -1,27 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BuildSoc | Policy + Urban Tech</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="BuildSoc is a Policy and Urban Tech Studio enabling smarter, data-driven cities through GIS, AI, and evidence-based policy innovation.">
+  <meta name="keywords"
+    content="Urban Tech, Policy Studio, Smart Cities, GIS, AI, Urban Planning, Digital Governance, BuildSoc, Data-driven Governance">
+  <meta name="author" content="BuildSoc">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://buildsoc.in/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://buildsoc.in/">
+  <meta property="og:title" content="BuildSoc | Policy + Urban Tech">
+  <meta property="og:description"
+    content="BuildSoc is a Policy and Urban Tech Studio enabling smarter, data-driven cities through GIS, AI, and evidence-based policy innovation.">
+  <meta property="og:image" content="https://buildsoc.in/assets/block.jpg">
+  <meta property="og:site_name" content="BuildSoc">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://buildsoc.in/">
+  <meta name="twitter:title" content="BuildSoc | Policy + Urban Tech">
+  <meta name="twitter:description"
+    content="BuildSoc is a Policy and Urban Tech Studio enabling smarter, data-driven cities through GIS, AI, and evidence-based policy innovation.">
+  <meta name="twitter:image" content="https://buildsoc.in/assets/block.jpg">
+
+  <!-- JSON-LD Structured Data: Organization, WebSite & Projects (AI-Readiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://buildsoc.in/#organization",
+        "name": "BuildSoc",
+        "url": "https://buildsoc.in/",
+        "logo": "https://buildsoc.in/assets/buildsoc_logo.svg",
+        "description": "A Policy and Urban Tech Studio that bridges governance, planning, and data enabling cities to become smarter and evidence-driven.",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Bharat Oraon",
+            "url": "https://www.linkedin.com/in/bharatoraon"
+          },
+          {
+            "@type": "Person",
+            "name": "Manish Yalala",
+            "url": "https://www.linkedin.com/in/themanishyalala/"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://buildsoc.in/#website",
+        "url": "https://buildsoc.in/",
+        "name": "BuildSoc",
+        "publisher": {
+          "@id": "https://buildsoc.in/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://buildsoc.in/?search={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Project",
+              "name": "Karur Regional Insights Dashboard",
+              "url": "https://app.buildsoc.in/our-product/karur-district-dashboard-app"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Project",
+              "name": "Urban Equity Analysis Hyderabad",
+              "url": "https://equity.buildsoc.in/"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Project",
+              "name": "GeoAI-Powered Urban Logistics",
+              "url": "https://geoai-logistics.streamlit.app/"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Project",
+              "name": "Equicity.tech: Urban Grid Resilience",
+              "url": "https://equicity.netlify.app/"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.mapbox.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="alternate icon" type="image/png" href="assets/favicon.png">
 
-
-  <!-- Lexend Deca Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <!-- Styles & Scripts -->
+  <style>
+    /* Semantic hidden elements for accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
   <link href="style.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet" />
-
-  <meta name="description" content="BuildSoc is a Policy and Urban Tech Studio enabling smarter, data-driven cities through GIS, AI, and evidence-based policy innovation.">
 </head>
 
 <body>
+  <header>
+    <a href="#home" class="visually-hidden">Skip to main content</a>
+  </header>
   <!-- Navigation Bar -->
-  <nav>
+  <nav aria-label="Main Navigation" role="banner">
     <div class="nav-left">
       <img src="assets/nav_icon1.svg" alt="Grid Icon" class="nav-icon" />
       <span class="nav-symbol">+</span>
@@ -46,93 +177,109 @@
   <!-- Map Background -->
   <div id="map"></div>
 
-  <!-- Home Section -->
-  <section id="home" class="home-viewport">
-    <div class="center-content">
-      <a href="https://app.buildsoc.in" target="_blank" rel="noopener noreferrer">
-        <img src="assets/buildsoc_logo.svg" alt="BuildSoc Logo" class="logo-main" />
-      </a>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about" class="overlay hidden">
-    <h2>About Us</h2>
-    <p>
-      <strong>BuildSoc</strong> (Building Smarter Societies) is a <strong>Policy and Urban Tech Studio</strong> that
-      bridges governance, planning, and data. We work at the intersection of <em>urban policy</em>,
-      <em>spatial technology</em>, and <em>digital governance</em> — enabling cities to become smarter,
-      more inclusive, and evidence-driven.
-    </p>
-    <p>
-      Founded by young urban planners and technologists, BuildSoc rethinks how
-      cities are shaped — not just through plans, but through <strong>data, design, and decision systems</strong>.
-    </p>
-
-    <h3>Our Mission</h3>
-    <p>
-      To create <strong>data-driven, technology-enabled urban systems</strong> that make cities more
-      equitable, sustainable, and responsive.
-    </p>
-
-    <h3>Our Vision</h3>
-    <p>
-      To be India’s most forward-thinking <strong>Urban Policy & Technology Think Tank</strong>,
-      transforming research and data into real change for cities and citizens.
-    </p>
-
-    <p class="founders">
-      Founded by <strong><a href="https://www.linkedin.com/in/bharatoraon" target="_blank" rel="noopener noreferrer">
-      Bharat Oraon
-    </a></strong> and <strong> <a href="https://www.linkedin.com/in/themanishyalala/" target="_blank" rel="noopener noreferrer"> Manish Yalala </a> </strong> — urban planners driven by innovation,
-      governance, and data.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="overlay hidden">
-    <h2>Flagship Projects</h2>
-    <div class="project-grid">
-      
-      <div class="project-card">
-        <a href="https://app.buildsoc.in/our-product/karur-district-dashboard-app" target="_blank" rel="noopener noreferrer">
-        <img src="assets/block.jpg" alt="Karur Dashboard & Block Accessibility Analysis"> </a>
-        <h3>Karur Regional Insights Dashboard</h3>
-        <p>An interactive web dashboard visualizing key regional data for Karur district, featuring a built-in analysis of block-level service accessibility.</p>
+  <main role="main">
+    <!-- Home Section -->
+    <section id="home" class="home-viewport">
+      <div class="center-content">
+        <h1 class="visually-hidden">BuildSoc | Policy + Urban Tech</h1>
+        <a href="https://app.buildsoc.in" target="_blank" rel="noopener noreferrer" aria-label="Go to BuildSoc App">
+          <img src="assets/buildsoc_logo.svg" alt="BuildSoc Logo" class="logo-main" />
+        </a>
       </div>
-      <div class="project-card">
-        <a href="https://equity.buildsoc.in/" target="_blank" rel="noopener noreferrer">
-        <img src="assets/equity.png" alt="Urban Equity Mapping Center"> </a>
-        <h3>Urban Equity Analysis Hyderabad</h3>
-        <p>A web-based platform that identifies, analyzes, and illustrates spatial equity patterns across diverse urban localities in hyderabad.</p>
-      </div>
-      <div class="project-card">
-        <a href="https://geoai-logistics.streamlit.app/" target="_blank" rel="noopener noreferrer">
-        <img src="assets/logistic.jpg" alt="GeoAI for Smarter Urban Logistics"> </a>
-        <h3>GeoAI-Powered Urban Logistics</h3>
-        <p>Geospatial AI to optimize urban freight routes, enhance last-mile delivery efficiency, and create sustainable logistics solutions for smart cities.</p>
-      </div>
-      <div class="project-card">
-        <a href="https://equicity.netlify.app/" target="_blank" rel="noopener noreferrer">
-        <img src="assets/grid.jpg" alt="Equicity.tech: Grid Failure & Location Optimization"> </a>
-        <h3>Equicity.tech: Urban Grid Resilience</h3>
-        <p>An Platform that models power grid vulnerabilities and optimizes the location of critical infrastructure to enhance resilience.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="overlay hidden">
-    <h2>Let’s Collaborate</h2>
-    <p>Have a project, policy idea, or data challenge? Let’s make it real.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Tell us about your idea..." required></textarea>
-      <button type="submit">Send Message ➜</button>
-    </form>
-  </section>
+    <!-- About Us Section -->
+    <section id="about" class="overlay hidden">
+      <h2>About Us</h2>
+      <p>
+        <strong>BuildSoc</strong> (Building Smarter Societies) is a <strong>Policy and Urban Tech Studio</strong> that
+        bridges governance, planning, and data. We work at the intersection of <em>urban policy</em>,
+        <em>spatial technology</em>, and <em>digital governance</em> — enabling cities to become smarter,
+        more inclusive, and evidence-driven.
+      </p>
+      <p>
+        Founded by young urban planners and technologists, BuildSoc rethinks how
+        cities are shaped — not just through plans, but through <strong>data, design, and decision systems</strong>.
+      </p>
+
+      <h3>Our Mission</h3>
+      <p>
+        To create <strong>data-driven, technology-enabled urban systems</strong> that make cities more
+        equitable, sustainable, and responsive.
+      </p>
+
+      <h3>Our Vision</h3>
+      <p>
+        To be India’s most forward-thinking <strong>Urban Policy & Technology Think Tank</strong>,
+        transforming research and data into real change for cities and citizens.
+      </p>
+
+      <p class="founders">
+        Founded by <strong><a href="https://www.linkedin.com/in/bharatoraon" target="_blank" rel="noopener noreferrer">
+            Bharat Oraon
+          </a></strong> and <strong> <a href="https://www.linkedin.com/in/themanishyalala/" target="_blank"
+            rel="noopener noreferrer"> Manish Yalala </a> </strong> — urban planners driven by innovation,
+        governance, and data.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="overlay hidden">
+      <h2>Flagship Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <a href="https://app.buildsoc.in/our-product/karur-district-dashboard-app" target="_blank"
+            rel="noopener noreferrer">
+            <img src="assets/block.webp" alt="Karur Dashboard & Block Accessibility Analysis" loading="lazy"> </a>
+          <h3>Karur Regional Insights Dashboard</h3>
+          <p>An interactive web dashboard visualizing key regional data for Karur district, featuring a built-in
+            analysis of block-level service accessibility.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://equity.buildsoc.in/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/equity.webp" alt="Urban Equity Mapping Center" loading="lazy"> </a>
+          <h3>Urban Equity Analysis Hyderabad</h3>
+          <p>A web-based platform that identifies, analyzes, and illustrates spatial equity patterns across diverse
+            urban localities in hyderabad.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://geoai-logistics.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/logistic.webp" alt="GeoAI for Smarter Urban Logistics" loading="lazy"> </a>
+          <h3>GeoAI-Powered Urban Logistics</h3>
+          <p>Geospatial AI to optimize urban freight routes, enhance last-mile delivery efficiency, and create
+            sustainable logistics solutions for smart cities.</p>
+        </div>
+        <div class="project-card">
+          <a href="https://equicity.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/grid.webp" alt="Equicity.tech: Grid Failure & Location Optimization" loading="lazy"> </a>
+          <h3>Equicity.tech: Urban Grid Resilience</h3>
+          <p>An Platform that models power grid vulnerabilities and optimizes the location of critical infrastructure to
+            enhance resilience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="overlay hidden">
+      <h2>Let’s Collaborate</h2>
+      <p>Have a project, policy idea, or data challenge? Let’s make it real.</p>
+      <form action="https://formspree.io/f/mqkenaqq" method="POST">
+        <label for="name" class="visually-hidden">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="email" class="visually-hidden">Your Email</label>
+        <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
+
+        <label for="message" class="visually-hidden">Your Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your idea..." required></textarea>
+
+        <button type="submit">Send Message ➜</button>
+      </form>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
+
 </html>

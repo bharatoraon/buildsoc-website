@@ -1,0 +1,16 @@
+# BuildSoc
+
+BuildSoc (Building Smarter Societies) is a Policy and Urban Tech Studio that bridges governance, planning, and data. We work at the intersection of urban policy, spatial technology, and digital governance — enabling cities to become smarter, more inclusive, and evidence-driven.
+
+## Founders
+* Bharat Oraon - https://www.linkedin.com/in/bharatoraon
+* Manish Yalala - https://www.linkedin.com/in/themanishyalala/
+
+## Flagship Projects
+* Karur Regional Insights Dashboard - https://app.buildsoc.in/our-product/karur-district-dashboard-app
+* Urban Equity Analysis Hyderabad - https://equity.buildsoc.in/
+* GeoAI-Powered Urban Logistics - https://geoai-logistics.streamlit.app/
+* Equicity.tech: Urban Grid Resilience - https://equicity.netlify.app/
+
+## Contact
+Connect with us via our website: https://buildsoc.in/#contact
