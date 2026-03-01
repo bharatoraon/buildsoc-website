@@ -83,53 +83,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// CONTACT FORM - EMAILJS INTEGRATION
+// CONTACT FORM - BACKGROUND SUBMISSION
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize EmailJS (Note: User needs to insert their public key here)
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init("YOUR_PUBLIC_KEY");
-  }
-
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      
+
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      // Ensure form IDs match EmailJS template variables
-      emailjs.sendForm('default_service', 'template_buildsoc', this)
-        .then(() => {
+      const formData = new FormData(form);
+
+      try {
+        // NOTE: Replace the fetch URL with your actual Formspree endpoint ID
+        const response = await fetch("https://formspree.io/f/mqkenaqq", {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
           btn.textContent = 'Message Sent Successfully ✓';
           btn.style.background = '#4CAF50';
           btn.style.color = 'white';
           form.reset();
+        } else {
+          throw new Error('Formspree return non-200');
+        }
+      } catch (err) {
+        console.error('Email sending failed:', err);
+        btn.textContent = 'Error. Please try again.';
+        btn.style.background = '#e74c3c';
+        btn.style.color = 'white';
+      }
 
-          // Reset button after 4 seconds
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.color = '';
-            btn.disabled = false;
-          }, 4000);
-        })
-        .catch((err) => {
-          console.error('Email sending failed:', err);
-          btn.textContent = 'Error. Please try again.';
-          btn.style.background = '#e74c3c';
-          btn.style.color = 'white';
-          
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.color = '';
-            btn.disabled = false;
-          }, 3000);
-        });
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 4000);
     });
   }
 });
